@@ -8,7 +8,7 @@ __all__ = ["trace_func_start", "trace_func_stop"]
 
 import os
 
-DEBUG = os.getenv("DEBUG", "1") == "1"
+DEBUG = os.getenv("DEBUG", "0") == "1"
 
 ##############################################################################
 ###  tracefunc
@@ -33,6 +33,7 @@ else:
 
 if DEBUG:
     os.environ["TORCH_COMPILE_DEBUG"] = "1"
+    os.environ["TORCHINDUCTOR_DEBUG_FUSION"] = "1"
     os.environ["INDUCTOR_WRITE_SCHEDULER_GRAPH"] = "1"
     #os.environ["TORCH_LOGS"] = "+fusion"  # suppress default logs
 

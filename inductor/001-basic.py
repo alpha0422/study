@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# docker image: `pytorch/pytorch:2.3.0-cuda12.1-cudnn8-devel`
+
 from common import trace_func_start, trace_func_stop
 
 import torch
